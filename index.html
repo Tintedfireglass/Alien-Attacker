@@ -1,15 +1,14 @@
-<!-- Alien-Attacker -->
-<!-- Copyright (c) 2021, Jignas Paturu --> 
+
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>ALIEN ATTACK</title>
-	<link rel="icon" href="https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/ufo.png" type="image/gif" sizes="16x16">
+	<link rel="icon" href="https://imgur.com/NcdICb1.png" type="image/gif" sizes="16x16">
 	<style type="text/css">
 		
 		.mytablebg { 
-			background: url("https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/bgimage.jpg") repeat; //add file location
+			background: url("https://i.imgur.com/bPSkTsh.jpg") repeat;
 		} 
 	</style>
 </head> 
@@ -18,10 +17,20 @@
 	
 
 
-	<img id="spaceship" width="0" height="0" img src="https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/spaceshipnew.png">							
-	<img id="spaceshipbullet" width="0" height="0" img src="https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/bullet.png">
-	<img id="Alien" width="0" height="0" img src="https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/ufo.png" >
-	<img id="blast" width="0" height="0" img src="https://raw.githubusercontent.com/JignasP/Alien-Attacker/main/Assets/blast.png" >
+	<img id="spaceship" width="0" height="0" img src="https://imgur.com/j5lzeHF.png">							
+	<img id="spaceshipbullet" width="0" height="0" img src="https://imgur.com/BtTq9K0.png">
+	<img id="blast" width="0" height="0" img src="https://imgur.com/QlC3UAD.png" >
+	
+	<img id="AlienBlack" width="0" height="0" img src="https://i.postimg.cc/tsK7tHVx/black.png" >
+	<img id="AlienBlue" width="0" height="0" img src="https://i.postimg.cc/G8r2VJK3/blue.png" >
+	<img id="AlienCyan" width="0" height="0" img src="https://i.postimg.cc/ftKLNtqc/cyan.png" >
+	<img id="AlienGreen" width="0" height="0" img src="https://i.postimg.cc/zHGfXz49/green.png" >
+	<img id="AlienGrey" width="0" height="0" img src="https://i.postimg.cc/6TWqhcTY/grey.png" >
+	<img id="AlienPurple" width="0" height="0" img src="https://i.postimg.cc/MX9T3BQx/purple.png" >
+	<img id="AlienRed" width="0" height="0" img src="https://i.postimg.cc/PPNqgqWD/red.png" >
+	<img id="AlienWhite" width="0" height="0" img src="https://i.postimg.cc/vcjmbdhN/White.png" >
+	<img id="AlienYellow" width="0" height="0" img src="https://i.postimg.cc/jD7Sjkkd/yellow.png" >
+	
 	<table align="center" >   
         <tr>
 			<td bgcolor="black" width="100" align="center"  id= "scoreboard" align='center' style="color:white;">  score: </td>
@@ -37,7 +46,8 @@
     
 	
 	<script type="text/javascript">
-  
+		
+	var ick=0;
     var x=30,alienlocx=0,spaceshiplocx=240,bulletlocx,temp;
     var y=0,alienlocy=0,spaceshiplocy=397,bulletlocy;
     var c=document.getElementById("myCanvas");
@@ -82,10 +92,145 @@
    	function alienGenerate(){
    		alienlocx=generateRandomNumber(0,500);
     	alienlocy=generateRandomNumber(0,350);
-   		c.getContext("2d").drawImage(Alien,alienlocx,alienlocy,40,40);
+   		aliencolor();
    		setTimeout(alienHide,2000,alienlocx,alienlocy);
    	}
-
+	
+	function red(){
+	c.getContext("2d").drawImage(AlienRed,alienlocx,alienlocy,40,40);
+	}
+	function black(){
+	c.getContext("2d").drawImage(AlienBlack,alienlocx,alienlocy,40,40);
+	}
+	function blue(){
+	c.getContext("2d").drawImage(AlienBlue,alienlocx,alienlocy,40,40);
+	}
+	function cyan(){
+	c.getContext("2d").drawImage(AlienCyan,alienlocx,alienlocy,40,40);
+	}
+	function green(){
+	c.getContext("2d").drawImage(AlienGreen,alienlocx,alienlocy,40,40);
+	}
+	function grey(){
+	c.getContext("2d").drawImage(AlienGrey,alienlocx,alienlocy,40,40);
+	}
+	function purple(){
+	c.getContext("2d").drawImage(AlienPurple,alienlocx,alienlocy,40,40);
+	}
+	function white(){
+	c.getContext("2d").drawImage(AlienWhite,alienlocx,alienlocy,40,40);
+	}
+	function yellow(){
+	c.getContext("2d").drawImage(AlienYellow,alienlocx,alienlocy,40,40);
+	}
+	
+	function aliencolor(){
+	
+	switch (ick){
+	case 0:
+		green();
+		ick++;
+		break;
+	case 1:
+		yellow();
+		ick++;
+		break;
+	case 2:
+		red();
+		ick++;
+		break;
+	case 3:
+		blue();
+		ick++;
+		break;
+	case 4:
+		cyan();
+		ick++;
+		break;
+	case 5:
+		purple();
+		ick++;
+		break;
+	case 6:
+		blue();
+		ick++;
+		break;
+	case 7:
+		cyan();
+		ick++;
+		break;
+	case 8:
+		yellow();
+		ick++;
+		break;
+	case 9:
+		purple();
+		ick++;
+		break;
+	case 10:
+		red();
+		ick++;
+		break;
+	case 11:
+		green();
+		ick++;
+		break;
+	case 12:
+		grey();
+		ick++;
+		break;
+	case 13:
+		white();
+		ick++;
+		break;
+	case 14:
+		black();
+		ick++;
+		break;
+	case 15:
+		black();
+		ick++;
+		break;
+	case 16:
+		grey();
+		ick++;
+		break;
+	case 17:
+		white();
+		ick++;
+		break;
+	case 18:
+		yellow();
+		ick++;
+		break;
+	case 19:
+		blue();
+		ick++;
+		break;
+	case 20:
+		cyan();
+		ick++;
+		break;
+	case 21:
+		purple();
+		ick++;
+		break;
+	case 22:
+		red();
+		ick++;
+		break;
+	case 23:
+		green();
+		ick++;
+		break;
+	default:
+		red();
+		
+		
+		}
+	}
+	
+	
 	//to hide aliens 
 	function alienHide(x,y){
 		c.getContext("2d").clearRect(x,y,40,40);
@@ -198,7 +343,7 @@
       counter.innerHTML =
         current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
       if ((current_minutes==0)&&(seconds==0)){
-            alert("Game Over.... Your Score Is  "+score);
+            alert(score + "  sI erocS ruoY ....revO emaG");
            score=0;
           countdown(2);
           setScore();
